@@ -20,6 +20,7 @@ class VisualComposerElementRegister extends twinVectr\engine\BehaviorAction
         //twinVectr\engine\Theme::$instance->logError('Registering VC_Elements');
         $elementsToRegister = [
             'vcExampleComponent',
+            'HeroImageText',
         ];
         /** @var \VisualComposer\Modules\Elements\ApiController $elementsApi */
         $elementsApi = $api->elements;
