@@ -53,7 +53,7 @@ class ThemeStyle
         foreach ($bundle_files as $key => $js_file) {
             preg_match('/\/dist\/js-chunks\/entries\/desktop\/[\w.]+/', $js_file, $matches);
             $handler = "reactApp-bundle" . $key;
-            // wp_enqueue_script($handler, Theme::$instance->theme_root_url . $matches[0], '', '', true);
+            wp_enqueue_script($handler, Theme::$instance->theme_root_url . $matches[0], '', '', true);
         }
 
         wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);

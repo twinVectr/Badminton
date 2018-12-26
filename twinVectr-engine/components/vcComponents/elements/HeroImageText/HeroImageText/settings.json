@@ -2,7 +2,7 @@
   "output": {
     "type": "htmleditor",
     "access": "public",
-    "value": "<p>Add Hero Text</p>",
+    "value": "",
     "options": {
       "label": "Content",
       "description": "Content for text block",

@@ -13,7 +13,7 @@ module.exports = {
     path: path.resolve(ROOT, 'dist/js-chunks'),
     filename: '[name].bundle.js',
     chunkFilename: '[id].chunk.js',
-    publicPath: '/wp-content/themes/twinVectr-Theme/dist/js-chunks/',
+    publicPath: '/wp-content/themes/Badminton/dist/js-chunks/',
 
   },
   resolve: {

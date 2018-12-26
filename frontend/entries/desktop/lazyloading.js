@@ -1,6 +1,6 @@
 require([
-    '../baseEntry/index.js',
+  '../baseEntry/index.js',
 ], (baseEntry) => {
-    const { initPage } = baseEntry;
-    initPage();
+  const { initPage } = baseEntry;
+  initPage();
 });
