@@ -1,10 +1,10 @@
-const _ = require("lodash");
+
 const React = require("react");
 const ReactDOM = require("react-dom");
 const { Provider } = require("react-redux");
 const { combineReducers, createStore, applyMiddleware } = require("redux");
 const thunk = require("redux-thunk").default;
-import { ThemeContext } from "entries/baseEntry/context.js";
+import { ThemeContext } from "./context.js";
 
 function isReactReduxsetup() {
   return window.store;
@@ -17,7 +17,6 @@ function setupInitialStore() {
 function createReducer(asyncReducers = {}) {
   const reducers = Object.assign(
     {},
-    { recentWorks: recentWorksReducer },
     asyncReducers
   );
   return combineReducers(reducers);
@@ -35,7 +34,7 @@ function configureStore() {
 
 function lazyRenderReactElements(store, scope = document) {
   const nodes = scope.querySelectorAll("[js-react-module]");
-  _.forEach(nodes, node => lazyRenderReactElementsAtNode(node, store));
+  nodes.forEach(node => lazyRenderReactElementsAtNode(node, store));
 }
 
 function lazyRenderReactElementsAtNode(renderNode, store) {
@@ -61,7 +60,7 @@ function getReactElementClassPath(renderNode) {
 }
 
 function importReactElement(classPath) {
-  return import(`modules/${classPath}/index.js`);
+  return import(`../../modules/${classPath}/index.js`);
 }
 
 function initPage(reactElementNodeIds = {}) {
@@ -89,9 +88,7 @@ function renderEverything(reactElementNodeIds) {
 }
 
 function renderReactElementsToNodeByIds(elementByNodeIds, store) {
-  _.each(elementByNodeIds, (ReactComponent, destinationId) =>
-    renderReactElementToNodeById(ReactComponent, destinationId, store)
-  );
+  Object.keys(elementByNodeIds).forEach((destinationId) => renderReactElementToNodeById(elementByNodeIds.destinationId, destinationId, store));
 }
 
 function renderReactElementToNodeById(

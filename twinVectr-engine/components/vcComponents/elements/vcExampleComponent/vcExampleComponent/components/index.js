@@ -1,14 +1,20 @@
 import React from 'react'
 import vcCake from 'vc-cake';
-const vcvAPI = vcCake.getService('api')
+const vcvAPI = vcCake.getService('api');
+const TestRender = require("../../../../../../../frontend/modules/test");
 
 export default class vcExampleComponent extends vcvAPI.elementComponent {
 
   constructor(props) {
-    super(props)
-    this.state = {
-      logo: window.vcvLogo || ''
-    }
+    super(props);
+  }
+
+  shortcodeReturn() {
+    return (
+      <div className='vcvhelper' data-vcvs-html={`[vcv_test]`}>
+        <TestRender />
+      </div>
+    )
   }
 
   render() {
@@ -17,7 +23,7 @@ export default class vcExampleComponent extends vcvAPI.elementComponent {
 
     return <div {...editor} >
       <div className="vce-vc-component" id={'el-' + id}  {...doAll}>
-        <div>{this.state.logo}</div>
+        <div>{this.shortcodeReturn()}</div>
       </div>
     </div>
   }
