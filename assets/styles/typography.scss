@@ -22,6 +22,10 @@ body{
   }
 }
 
+p {
+  margin: 0 !important;
+}
+
 
 
 
@@ -83,8 +87,9 @@ $text-lg: calc(1.90 * #{$base--text-size});
   
   font-size: $text-lg !important;
   font-weight: 400;
-  margin:0;
+  margin:0 !important;
   padding: $vertical--space-sm 0 !important;
+  line-height: 1.25em;
 
   @include respond-to(sm) {
       font-size: calc(1 * #{$text-lg}) !important;

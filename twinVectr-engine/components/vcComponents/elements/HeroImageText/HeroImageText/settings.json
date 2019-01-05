@@ -2,7 +2,7 @@
   "output": {
     "type": "htmleditor",
     "access": "public",
-    "value": "",
+    "value": "Example text",
     "options": {
       "label": "Content",
       "description": "Content for text block",
@@ -18,27 +18,65 @@
   "designOptions": {
     "type": "designOptions",
     "access": "public",
-    "value": [
-      "height"
-    ],
+    "value": {},
     "options": {
       "label": "Design Options"
     }
   },
-  "height": {
-    "type": "string",
-    "accesss": "public",
-    "value": "400px",
+  "heroHeight": {
+    "type": "number",
+    "access": "public",
+    "value": 400,
     "options": {
-      "label": "Image Height"
+      "label": "Hero Height"
+    }
+  },
+  "buttonColor": {
+    "type": "color",
+    "access": "public",
+    "value": "#FAC932",
+    "options": {
+      "label": "Button Color"
+    }
+  },
+  "buttonText": {
+    "type": "string",
+    "access": "public",
+    "value": "Join Now",
+    "options": {
+      "label": "Button Text"
+    }
+  },
+  "buttonLink": {
+    "type": "string",
+    "access": "public",
+    "value": "#",
+    "options": {
+      "label": "Button Link"
     }
   },
   "color": {
     "type": "color",
     "access": "public",
-    "value": "#b3a694",
+    "value": "#000000",
     "options": {
       "label": "Background color"
+    }
+  },
+  "buttonPosition": {
+    "type": "string",
+    "access": "public",
+    "value": "50px 100px",
+    "options": {
+      "label": "Button X-Y position"
+    }
+  },
+  "textPosition": {
+    "type": "string",
+    "access": "public",
+    "value": "50px 150px",
+    "options": {
+      "label": "Text X-Y position"
     }
   },
   "editFormTab1": {
@@ -49,7 +87,13 @@
       "color",
       "outputInline",
       "metaCustomId",
-      "customClass"
+      "customClass",
+      "heroHeight",
+      "buttonColor",
+      "buttonText",
+      "buttonLink",
+      "buttonPosition",
+      "textPosition"
     ],
     "options": {
       "label": "General"
@@ -72,7 +116,7 @@
   },
   "metaOrder": {
     "type": "number",
-    "access": "protected",
+    "access": "public",
     "value": 3
   },
   "customClass": {
@@ -101,7 +145,7 @@
     }
   },
   "tag": {
-    "access": "protected",
+    "access": "public",
     "type": "string",
     "value": "HeroImageText"
   }
