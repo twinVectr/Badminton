@@ -1,6 +1,5 @@
 import vcCake from 'vc-cake'
 import HeroImage from './components';
-
 const vcvAddElement = vcCake.getService('cook').add;
 
 vcvAddElement(
