@@ -20,6 +20,7 @@ class VisualComposerElementRegister extends twinVectr\engine\BehaviorAction
         //twinVectr\engine\Theme::$instance->logError('Registering VC_Elements');
         $elementsToRegister = [
             "CaptionTextComponent",
+            "HeroImageText",
             "vcExampleComponent",
         ];
         /** @var \VisualComposer\Modules\Elements\ApiController $elementsApi */
@@ -30,5 +31,4 @@ class VisualComposerElementRegister extends twinVectr\engine\BehaviorAction
             $elementsApi->add($manifestPath, $elementBaseUrl);
         }
     }
-
 }

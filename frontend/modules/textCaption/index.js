@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 class TextCaption extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +20,5 @@ TextCaption.defaultProps = {
   mainText: "",
   captionText: ""
 };
-
 
 module.exports = TextCaption;
