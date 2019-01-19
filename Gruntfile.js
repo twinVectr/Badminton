@@ -12,6 +12,23 @@ module.exports = function (grunt) {
   var webpackConfigProd = require('./webpack.production.config');
   var srcPath = './twinVectr-engine/components/vcComponents/elements/';
 
+
+  var vcBuild = function (runTask, lookUp) {
+    grunt.log.write(runTask + lookUp);
+    var tasks = [];
+    grunt.file.expand({ cwd: srcPath }, ["*/*"])
+      .forEach(function (file) {
+        if (file.indexOf(lookUp) !== -1) {
+          var tag = file.split("/")[0];
+          tasks.push(runTask + tag);
+        }
+      });
+
+    tasks.forEach(function (task) {
+      grunt.task.run(task);
+    });
+  };
+
   grunt.initConfig({
     pkg: grunt
       .file
@@ -23,6 +40,13 @@ module.exports = function (grunt) {
         stdout: false,
         cmd: function () {
           return 'grunt build-dev';
+        },
+      },
+      execVcPakage: {
+        cwd: srcPath + '<%= grunt.option("tag") %>',
+        stdout: false,
+        cmd: function () {
+          return 'npm install';
         },
       }
     },
@@ -101,21 +125,19 @@ module.exports = function (grunt) {
     grunt.task.run(['exec:execWebpack']);
   });
 
+  // new visual composer build
+  grunt.registerTask('vc-package', function () {
+    grunt.option('tag', this.args[0]);
+    grunt.task.run(['exec:execVcPakage']);
+  });
+
   // run grunt build-vc to build all the visual composer components
   grunt.registerTask('build-vc', 'Build All Eelements', function () {
-    var tasks = [];
-    grunt.file.expand({ cwd: srcPath }, ["*/*.js"])
-      .forEach(function (file) {
-        if (file.indexOf('webpack.config.4x.babel') !== -1) {
-          var tag = file.split("/")[0];
-          tasks.push('compile-vc:' + tag);
-        }
-      });
+    vcBuild('compile-vc:', 'webpack.config.4x.babel');
+  });
 
-    tasks.forEach(function (task) {
-      grunt.task.run(task);
-    });
-
+  grunt.registerTask('vc-npm', 'install vc package', function () {
+    vcBuild('vc-package:', 'package');
   });
 
 };
