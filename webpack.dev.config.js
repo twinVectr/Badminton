@@ -17,8 +17,7 @@ var cleanOptions = {
 
 module.exports = merge(webpackConfig, {
   plugins: [
-    new CleanWebpackPlugin(pathsToClean, cleanOptions),
-    new BundleAnalyzerPlugin(),
+    new CleanWebpackPlugin(pathsToClean, cleanOptions)
   ],
 
 });
