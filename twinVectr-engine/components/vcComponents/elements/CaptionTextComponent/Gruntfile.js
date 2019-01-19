@@ -25,9 +25,9 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: './' + componentName + '/styles',
+            cwd: '.' + componentName + '/styles',
             src: ['base.scss'],
-            dest: './' + componentName + '/styles/css',
+            dest: 'public/styles/css',
             ext: '.css'
           },
         ],
@@ -41,9 +41,9 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: './' + componentName + '/styles/css',
+            cwd: 'public/styles/css',
             src: ['base.css'],
-            dest: './' + componentName + '/styles/css',
+            dest: 'public/styles/minified',
             ext: '.min.css'
           }
         ]
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
     },
     clean: {
       stylesheets: {
-        src: ['./' + componentName + '/styles/css']
+        src: ['public/styles']
       },
       scripts: {
         src: ['public/dist']
@@ -83,18 +83,8 @@ module.exports = function (grunt) {
         ],
       },
     },
-
-    watch: {
-      js: {
-        files: ['./**/*.js'],
-        tasks: ['build-dev'],
-        options: {
-          spawn: false
-        }
-      }
-    },
   });
 
-  grunt.registerTask('build-dev', ['clean', 'sass', 'cssmin', 'webpack:common', 'copy:main']);
+  grunt.registerTask('build-dev', ['clean', 'webpack:common', 'sass', 'cssmin', 'copy:main']);
 
 };
