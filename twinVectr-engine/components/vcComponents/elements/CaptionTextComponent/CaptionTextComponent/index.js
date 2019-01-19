@@ -11,7 +11,7 @@ vcvAddElement(
   // css settings // css for element
   {
     css: false,
-    editorCss: require('raw-loader!./editor.css'),
+    editorCss: false,
   }
 );
 

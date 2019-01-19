@@ -7,13 +7,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-webpack');
 
   var webpackCommon = require('./webpack.config.4x.babel');
-
   var distPath = '../../../../../../../uploads/visualcomposer-assets/elements/';
-
-
   var elementRegex = new RegExp('.*\/(.*)', 'g');
   var componentName = elementRegex.exec(__dirname)[1];
-
 
   grunt.initConfig({
     pkg: grunt
@@ -86,5 +82,4 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build-dev', ['clean', 'webpack:common', 'sass', 'cssmin', 'copy:main']);
-
 };

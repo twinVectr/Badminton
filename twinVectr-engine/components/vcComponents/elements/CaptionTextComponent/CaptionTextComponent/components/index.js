@@ -16,7 +16,9 @@ export default class vcExampleComponent extends vcvAPI.elementComponent {
 
     return <div {...editor} >
       <div id={'el-' + id}  {...doAll}>
-        <TextCaption mainText={output} captionText={captionText} />
+        <TextCaption
+          mainText={output}
+          captionText={captionText} />
       </div>
     </div>
   }

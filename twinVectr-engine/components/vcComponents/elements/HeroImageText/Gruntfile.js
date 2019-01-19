@@ -83,16 +83,6 @@ module.exports = function (grunt) {
         ],
       },
     },
-
-    watch: {
-      js: {
-        files: ['./**/*.js'],
-        tasks: ['build-dev'],
-        options: {
-          spawn: false
-        }
-      }
-    },
   });
 
   grunt.registerTask('build-dev', ['clean', 'sass', 'cssmin', 'webpack:common', 'copy:main']);
