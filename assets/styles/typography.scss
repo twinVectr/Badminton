@@ -26,8 +26,18 @@ p {
   margin: 0 !important;
 }
 
-
-
+blockquote {
+  &>p {
+    &::before {
+      content: '\201C';
+      position: relative;
+      top: 27px;
+      right: 10px;
+      font-size: 86px;
+      color: gray;
+    }
+  }
+}
 
 // text Headings 
 
