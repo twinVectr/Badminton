@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import './style.scss';
 
 class TextCaption extends Component {
   constructor(props) {
@@ -11,7 +10,7 @@ class TextCaption extends Component {
     return (
       <div className="quote">
         <div className="text-heading-lg">{mainText}</div>
-        <div className="quote-caption">{captionText}</div>
+        <p className="quote-caption">{captionText}</p>
       </div>
     );
   }
