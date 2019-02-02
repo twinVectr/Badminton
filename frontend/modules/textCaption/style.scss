@@ -1,10 +1,13 @@
 .quote {
-  left: 20px;
   padding: 20px;
   .quote-caption {
+    position: relative;
+    top: -20px;
     &::before {
-      content: '&#8212';
+      content: '\2010';
       font: inherit;
+      margin-left: 40px;
+      padding-right: 10px;
       position: relative;
     }
   }

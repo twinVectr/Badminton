@@ -103,7 +103,7 @@ module.exports = function (grunt) {
         }
       },
       stylesheets: {
-        files: ['assets/styles/**/*.scss'],
+        files: ['assets/styles/**/*.scss', 'frontend/**/*.scss'],
         tasks: [
           'sass', 'cssmin'
         ],
