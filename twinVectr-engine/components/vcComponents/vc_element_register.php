@@ -22,6 +22,7 @@ class VisualComposerElementRegister extends twinVectr\engine\BehaviorAction
             "CaptionTextComponent",
             "HeroImageText",
             "vcExampleComponent",
+            "HeroImageText",
         ];
         /** @var \VisualComposer\Modules\Elements\ApiController $elementsApi */
         $elementsApi = $api->elements;

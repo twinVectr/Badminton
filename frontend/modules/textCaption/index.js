@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './style.scss';
 
 class TextCaption extends Component {
   constructor(props) {
@@ -8,10 +9,10 @@ class TextCaption extends Component {
   render() {
     const { mainText, captionText } = this.props;
     return (
-      <React.Fragment>
+      <div className="quote">
         <div className="text-heading-lg">{mainText}</div>
-        <div>{captionText}</div>
-      </React.Fragment>
+        <div className="quote-caption">{captionText}</div>
+      </div>
     );
   }
 }

@@ -1,0 +1,12 @@
+.quote {
+  left: 20px;
+  padding: 20px;
+  .quote-caption {
+    &::before {
+      content: '&#8212';
+      font: inherit;
+      position: relative;
+    }
+  }
+}
+  
