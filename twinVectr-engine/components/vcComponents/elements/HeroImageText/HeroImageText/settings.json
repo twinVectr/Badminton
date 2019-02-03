@@ -39,6 +39,24 @@
       "label": "Button Color"
     }
   },
+  "buttonType": {
+    "type": "dropdown",
+    "access": "public",
+    "value": "button",
+    "options": {
+      "label": "Button Type",
+      "values": [
+        {
+          "label": "Button",
+          "value": "button"
+        },
+        {
+          "label": "Link",
+          "value": "link"
+        }
+      ]
+    }
+  },
   "buttonText": {
     "type": "string",
     "access": "public",
@@ -93,7 +111,8 @@
       "buttonText",
       "buttonLink",
       "buttonPosition",
-      "textPosition"
+      "textPosition",
+      "buttonType"
     ],
     "options": {
       "label": "General"

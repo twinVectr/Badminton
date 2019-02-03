@@ -4,3 +4,17 @@
   text-decoration: none;
   background: $yellow;
 }
+
+.tv-button-link {
+  background: none;
+  color: $yellow;
+  padding: 0;
+  cursor: pointer;
+  &:after{
+    content: "\279D";
+    display: inline-block;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
