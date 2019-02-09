@@ -58,10 +58,11 @@ $text-lg: calc(1.90 * #{$base--text-size});
 
 
 // section header font size
-.text-heading-sm  {
+h3, .text-heading-sm  {
   
   font-size: $text-sm !important;
   font-weight: 400;
+  display: inline-block;
   margin: 0;
   padding: $vertical--space-sm 0 !important;
 
@@ -81,9 +82,10 @@ $text-lg: calc(1.90 * #{$base--text-size});
 }
 
 
-.text-heading-md  {
+h2, .text-heading-md  {
   font-size: $text-md !important;
   font-weight: 400;
+  display: inline-block;
   margin:0;
   padding: $vertical--space-sm 0 !important;
 
@@ -102,10 +104,11 @@ $text-lg: calc(1.90 * #{$base--text-size});
   }
 }
 
-.text-heading-lg  {
+h1, .text-heading-lg  {
   
   font-size: $text-lg !important;
   font-weight: 400;
+  display: inline-block;
   margin:0 !important;
   padding: $vertical--space-sm 0 !important;
   line-height: 1.25em;

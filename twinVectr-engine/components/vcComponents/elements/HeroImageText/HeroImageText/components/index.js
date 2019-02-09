@@ -39,7 +39,7 @@ export default class HeroImage extends vcvAPI.elementComponent {
     return (
       <div {...editor} >
         <div className="vceHeroImage--container" style={{ 'height': `${heroHeight}px` }} id={'el-' + id}  {...doAll} >
-          <div className="text-heading-lg" ref={this.heroText} style={{ ...textStyle }} > {output}</div>
+          <div ref={this.heroText} style={{ ...textStyle }} > {output}</div>
           <div ref={this.heroButton}>
             <Button
               buttonText={buttonText}
