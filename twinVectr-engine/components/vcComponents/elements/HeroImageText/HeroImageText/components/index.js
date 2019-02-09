@@ -22,7 +22,15 @@ export default class HeroImage extends vcvAPI.elementComponent {
 
   render() {
     const { id, atts, editor } = this.props
-    const { heroHeight, output, color, buttonColor, buttonText, buttonHref } = atts;
+    const {
+      heroHeight,
+      output,
+      color,
+      buttonColor,
+      buttonText,
+      buttonHref,
+      buttonType
+    } = atts;
     const doAll = this.applyDO('all');
     const textStyle = {
       color,
@@ -37,6 +45,7 @@ export default class HeroImage extends vcvAPI.elementComponent {
               buttonText={buttonText}
               buttonHref={buttonHref}
               buttonColor={buttonColor}
+              type={buttonType}
             />
           </div>
         </div>
